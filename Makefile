@@ -11,6 +11,6 @@ push:
 	docker push $(IMAGE_NAME):latest
 
 github:
-	docker buildx build --build-arg KEYCLOAK_VERSION=$(KEYCLOAK_VERSION) --platform linux/arm/v7,linux/arm64/v8,linux/amd64 \
+	docker buildx build --build-arg KEYCLOAK_VERSION=$(KEYCLOAK_VERSION) --platform linux/arm64/v8,linux/amd64 \
  		--tag "$(IMAGE_NAME):latest" --tag "$(IMAGE_NAME):$(IMAGE_VERSION)" \
  		--output "type=image,push=true" .
