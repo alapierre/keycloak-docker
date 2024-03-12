@@ -2,11 +2,12 @@ version: '3.7'
 services:
 
   keycloak:
-    image: lapierre/keycloak:21.0.2
+    image: lapierre/keycloak:24.0.1
     command:
-      - start-dev --import-realm --auto-build  --db=postgres
+      - start-dev
     environment:
       - KC_HOSTNAME=keycloak
+      - KC_DB=postgres
       - KC_DB_URL=jdbc:postgresql://db:5432/keycloak
       - KC_DB_USERNAME=user
       - KC_DB_PASSWORD=password
