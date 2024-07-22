@@ -1,4 +1,4 @@
-FROM lapierre/java-alpine:17 AS build
+FROM lapierre/java-alpine:21 AS build
 LABEL authors="Adrian Lapierre <al@alapierre.io>"
 
 ARG KEYCLOAK_VERSION=999.0.0-SNAPSHOT
@@ -15,8 +15,8 @@ RUN (cd /tmp/keycloak && \
 RUN mv /tmp/keycloak/keycloak-* /opt/keycloak && mkdir -p /opt/keycloak/data
 RUN chmod -R g+rwX /opt/keycloak
 
-FROM lapierre/java-alpine:17
-ENV LANG en_US.UTF-8
+FROM lapierre/java-alpine:21
+ENV LANG=en_US.UTF-8
 
 RUN apk add --update --no-cache bash tzdata
 RUN apk add --no-cache -u libpng --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main
