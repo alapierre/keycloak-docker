@@ -1,6 +1,6 @@
 include .env
 IMAGE_NAME=lapierre/keycloak
-IMAGE_VERSION=$(KEYCLOAK_VERSION)
+IMAGE_VERSION=$(KEYCLOAK_VERSION).1
 
 build:
 	docker build --pull --build-arg KEYCLOAK_VERSION=$(KEYCLOAK_VERSION) -t $(IMAGE_NAME):$(IMAGE_VERSION) .
