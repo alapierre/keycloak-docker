@@ -25,7 +25,7 @@ jobs:
         run: |
           make github
       - name: Scan image
-        uses: anchore/scan-action@v3
+        uses: anchore/scan-action@v7
         with:
           image: "lapierre/keycloak:latest"
           fail-build: false
