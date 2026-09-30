@@ -19,7 +19,7 @@ FROM lapierre/java-alpine:21
 ENV LANG=en_US.UTF-8
 
 RUN apk add --update --no-cache bash tzdata
-RUN apk add --no-cache -u libpng --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main
+RUN apk add --no-cache -u expat --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main
 
 COPY --from=build --chown=1000:0 /opt/keycloak /opt/keycloak
 
